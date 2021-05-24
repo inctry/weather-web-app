@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Card } from 'antd';
-
+import { Link } from 'react-router-dom';
 import './weather_card.css';
 
 
@@ -15,9 +15,9 @@ const WeatherCard : React.FC<{cityID: string}> = (props: {cityID: string}) => {
       setWeatherState(res);
       setTodayWeather(res.data.data.forecast[0]);
     });
-  }, [props.cityID]);
+  }, []);
   return (
-    <Card title={weatherState?.data.cityInfo.city} extra={<a href="#">查看未来详情</a>} style={{ width: 250 }} hoverable={true}>
+    <Card title={weatherState?.data.cityInfo.city} extra={<Link to={`/${props.cityID}`}>查看未来详情</Link>} style={{ width: 250 }} hoverable={true}>
       <div className="displaySpaceBetween">
         <div>{todayWeather?.ymd}</div>
         <div>{todayWeather?.week}</div>

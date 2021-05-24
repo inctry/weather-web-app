@@ -24,7 +24,7 @@ const SearchDialog : React.FC<{visible: boolean, hideDialog(e ?: any): void, con
   }
   return (
     <>
-      <Modal title="选择城市" visible={props.visible} centered={true} onOk={onOk}>
+      <Modal title="选择城市" visible={props.visible} centered={true} onOk={onOk} onCancel={() => {props.hideDialog();}}>
         <AutoComplete
           options={options}
           onSearch={onSearch}
