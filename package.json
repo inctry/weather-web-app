@@ -50,6 +50,7 @@
     ]
   },
   "proxy": "http://t.weather.itboy.net/",
+  "homepage": "https://inctry.github.io/weather-web-app",
   "devDependencies": {
     "@types/js-cookie": "^2.2.6"
   }
